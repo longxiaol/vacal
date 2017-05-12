@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select name="" id="prevince">
+
+		</select>
+		<select name="" id="city"></select>
+		<select name="" id="district"></select>
+		
+	</body>
+	
+	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
+	
+	<script>
+		$(function(){
+			//保存所有行政区
+			var address={};
+				$.getJSON("data/addresses.json",function(data){
+					/*$(data.regions).each(function(index,ele){
+						console.log(ele);
+					})*/
+					data.regions.forEach(function(prevince){
+						//遍历当前遍历到 省份对象
+						address[prevince.name]={};
+						if(!prevince.regions)
+							return;
+						prevince.regions.forEach(function(city){
+							address[prevince.name][city.name]=city.regions;
+							
+						})
+					})
+					initPrevince();
+					/*initCity(); 因为在initPrevince函数中有调用initCity函数
+					initDistrict();*/
+				})
+			
+			//初始化省份信息
+			function initPrevince(){
+				var html="";
+				for(var i in address){			
+					html+='<option value="'+i+'">'+i+'</option>';
+				}
+				$("#prevince").append(html);
+				initCity();
+			}
+			
+			//初始化城市
+			function initCity(){
+				//获取省份选中的值
+				var _prevince=$("#prevince").val(),
+					cities=address[_prevince];
+					
+				var html="";
+				for(var i in cities){
+						html+='<option value="'+i+'">'+i+'</option>'			
+				}
+				$("#city").empty().append(html);
+				initDistrict();
+				
+			}
+			
+			//初始化地区区县
+			function initDistrict(){
+				var _prevince=$("#prevince").val(),
+					_city=$("#city").val(),
+					districts=address[_prevince][_city];
+					
+				var html="";
+				districts.forEach(function(d){
+					html+='<option value="'+d.name+'">'+d.name+'</option>';								
+				})
+				
+				$("#district").empty().append(html);
+				
+			}
+			
+			//省份发生改变，重新调用city
+			$("#prevince").on("change",initCity);
+			$("#city").on("change",initDistrict);
+			
+			
+		});
+		
+	</script>
+</html>
