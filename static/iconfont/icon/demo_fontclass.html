@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IconFont</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
+</head>
+<body>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon iconfont icon-daipingjia"></i>
+                    <div class="name">待评价</div>
+                    <div class="fontclass">.icon-daipingjia</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-daifahuo01"></i>
+                    <div class="name">待收货</div>
+                    <div class="fontclass">.icon-daifahuo01</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-gouwucheshoppingcart"></i>
+                    <div class="name">购物车 shopping cart</div>
+                    <div class="fontclass">.icon-gouwucheshoppingcart</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-daifahuo"></i>
+                    <div class="name">代发货</div>
+                    <div class="fontclass">.icon-daifahuo</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-rujin"></i>
+                    <div class="name">ingold</div>
+                    <div class="fontclass">.icon-rujin</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-baozhengjin"></i>
+                    <div class="name">保证金</div>
+                    <div class="fontclass">.icon-baozhengjin</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shezhi"></i>
+                    <div class="name">设置</div>
+                    <div class="fontclass">.icon-shezhi</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shanchu"></i>
+                    <div class="name">删除</div>
+                    <div class="fontclass">.icon-shanchu</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-cuowuguanbiquxiao-xianxingyuankuang"></i>
+                    <div class="name">72错误、关闭、取消-线性圆框</div>
+                    <div class="fontclass">.icon-cuowuguanbiquxiao-xianxingyuankuang</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-fenxiang"></i>
+                    <div class="name">分享</div>
+                    <div class="fontclass">.icon-fenxiang</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-wode-daifukuan"></i>
+                    <div class="name">我的-代付款</div>
+                    <div class="fontclass">.icon-wode-daifukuan</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-wait"></i>
+                    <div class="name">wait</div>
+                    <div class="fontclass">.icon-wait</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-jinggao"></i>
+                    <div class="name">警告</div>
+                    <div class="fontclass">.icon-jinggao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-pingjia_icon"></i>
+                    <div class="name">pingjia_icon</div>
+                    <div class="fontclass">.icon-pingjia_icon</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiaoxi-copy"></i>
+                    <div class="name">xiaoxi</div>
+                    <div class="fontclass">.icon-xiaoxi-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-tixianguanli"></i>
+                    <div class="name">提现管理</div>
+                    <div class="fontclass">.icon-tixianguanli</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shouhou"></i>
+                    <div class="name">shouhou</div>
+                    <div class="fontclass">.icon-shouhou</div>
+                </li>
+            
+        </ul>
+
+        <h2 id="font-class-">font-class引用</h2>
+        <hr>
+
+        <p>font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。</p>
+        <p>与unicode使用方式相比，具有如下特点：</p>
+        <ul>
+        <li>兼容性良好，支持ie8+，及所有现代浏览器。</li>
+        <li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。</li>
+        <li>因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+        <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-fontclass-">第一步：引入项目下面生成的fontclass代码：</h3>
+
+
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;</span></code></pre>
+        <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-css hljs">&lt;<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">class</span>="<span class="hljs-selector-tag">iconfont</span> <span class="hljs-selector-tag">icon-xxx</span>"&gt;&lt;/<span class="hljs-selector-tag">i</span>&gt;</code></pre>
+        <blockquote>
+        <p>"iconfont"是你项目下的font-family。可以通过编辑项目查看，默认是"iconfont"。</p>
+        </blockquote>
+    </div>
+</body>
+</html>
